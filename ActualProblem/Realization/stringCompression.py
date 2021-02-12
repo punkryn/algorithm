@@ -1,6 +1,10 @@
 # https://programmers.co.kr/learn/courses/30/lessons/60057
 # ababcdcdababcdcd
 
+# 압축 단위를 처음부터 정하고 시작하기 때문에 코드가 짧았던 문제. 실제 정답 코드말고 주석 처리된 코드는 step이 정해져 있지 않고
+# 해당 문자열 패턴이 압축할 수 있는 패턴이면 압축을 실행함. 예를 들어 xabab의 경우 정답 코드로는 압축이 안 되지만
+# 주석처리된 코드로는 x2ab로 압축이 가능하다. 그 외에는 정답으로 제출한 코드와 깃헙에 올라온 정답 코드의 로직이 거의 같다.
+
 # def solution(s):
 #     answer = 0
 #
@@ -75,7 +79,7 @@ def solution(s):
 
         tmp += str(count if count != 1 else '') + s[j + i:]
         print(tmp)
-        result.append(len(tmp)) if  len(tmp) > 0 else 1
+        result.append(len(tmp)) if len(tmp) > 0 else 1
     print(result)
     answer = min(result)
     return answer

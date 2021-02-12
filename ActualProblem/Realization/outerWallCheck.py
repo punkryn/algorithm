@@ -17,10 +17,10 @@ def solution(n, weak, dist):
             checklist[tmp] = 1
 
         starts = permutations(weak, i)
-        for asd in starts:
-            print(asd, end=' ')
+        # for asd in starts:
+        #     print(asd, end=' ')
         for pe in starts:
-            print(pe)
+            #print(pe)
             checklist = [0] * n
             count = 0
             for tmp in weak:
@@ -41,6 +41,7 @@ def solution(n, weak, dist):
                 return pnum
 
     return -1
+
 
 
 # n = 12

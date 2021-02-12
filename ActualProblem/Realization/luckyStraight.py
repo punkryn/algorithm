@@ -1,4 +1,7 @@
 # 123402
+# https://acmicpc.net/problem/18406
+
+
 
 def cal(n):
     length = len(n)

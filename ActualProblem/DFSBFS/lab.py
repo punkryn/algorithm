@@ -14,9 +14,6 @@
 # https://www.acmicpc.net/problem/14502
 
 from itertools import combinations
-import sys
-
-sys.setrecursionlimit(1000000)
 
 n, m = map(int, input().split())
 

@@ -1,3 +1,9 @@
+# 2 20 50
+# 50 30
+# 20 40
+
+# https://acmicpc.net/problem/16234
+
 import sys
 sys.setrecursionlimit(100000)
 

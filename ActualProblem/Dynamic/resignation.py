@@ -33,7 +33,7 @@ for i in range(n - 1, -1, -1):
     day, pay = week[i]
     #print('day, i', day, i)
     if day + i > n:
-        continue
+        money[i] = max_value
     elif day + i == n:
         money[i] = max(money[day + i] + pay, max_value)
         max_value = money[i]
@@ -45,7 +45,7 @@ for i in range(n - 1, -1, -1):
         #     money[i] = pay
 
     #print(week)
-    print(money)
+    #print(money)
 
 print(max(money))
 

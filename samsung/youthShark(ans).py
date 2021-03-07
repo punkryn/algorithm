@@ -63,15 +63,16 @@ def dfs(array, now_x, now_y, total):
     total += array[now_x][now_y][0]
     array[now_x][now_y][0] = -1
 
-    # for a in range(4):
-    #     for b in range(4):
-    #         print(array[a][b], end=' ')
-    #     print()
-    # print()
+    for a in range(4):
+        for b in range(4):
+            print(array[a][b], end=' ')
+        print()
+    print()
 
     move_all_fishes(array, now_x, now_y)
 
     positions = get_possible_positions(array, now_x, now_y)
+    print(positions)
 
     if len(positions) == 0:
         result = max(result, total)

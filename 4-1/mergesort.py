@@ -32,6 +32,7 @@ def merge(arr, p, k, q):
         j += 1
 
     j = 0
+    print(c, arr)
     for i in range(p, q + 1):
         arr[i] = c[j]
         j += 1
@@ -39,4 +40,3 @@ def merge(arr, p, k, q):
 arr = [6, 1, 3, 9, 4, 5, 8, 2, 7]
 mergesort(arr, 0, 8)
 print(arr)
-

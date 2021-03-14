@@ -21,7 +21,7 @@
 # 3 2 4 1
 # 1 4 2 3
 # 1 4 2 3
-
+#
 # https://www.acmicpc.net/problem/19237
 
 # 이동 룰

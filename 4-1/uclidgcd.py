@@ -13,3 +13,13 @@ def gcd(a, b):
 print(gcd(1071, 342))
 print(gcd(342, 1071))
 
+a = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n','o','p','q','r','s','t','u','v','w','x','y','z']
+sen = 'iamastudentatkit'
+key = 'kumohkumohkumohk'
+
+phrase = []
+for i, word in enumerate(sen):
+    print(a.index(word) + a.index(key[i]))
+    phrase.append(a[((a.index(word) + a.index(key[i])) % 26)])
+
+print(''.join(phrase))

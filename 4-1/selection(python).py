@@ -27,3 +27,4 @@ def selection(a, k):
 a = [24, 2, 36, 77, 9, 0, 63, 5]
 v = selection(a, 4)
 print(v)
+

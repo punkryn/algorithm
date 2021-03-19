@@ -5,6 +5,7 @@ def mergesort(arr):
     mid = len(arr) // 2
     low_arr = mergesort(arr[:mid])
     high_arr = mergesort(arr[mid:])
+    #print(low_arr, high_arr)
 
     merged_arr = []
     l = h = 0
@@ -17,6 +18,7 @@ def mergesort(arr):
             h += 1
     merged_arr += low_arr[l:]
     merged_arr += high_arr[h:]
+
     return merged_arr
 
 

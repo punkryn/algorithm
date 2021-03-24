@@ -21,4 +21,3 @@ def qsort(a):
 a = [24, 2, 36, 77, 9, 0, 63, 5]
 b = qsort(a)
 print(b)
-

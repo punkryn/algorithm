@@ -29,3 +29,5 @@ def quicksort(a, left, right):
 a = [24, 2, 36, 77, 9, 0, 63, 5]
 quicksort(a, 0, len(a)-1)
 print(a)
+
+

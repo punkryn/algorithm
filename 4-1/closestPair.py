@@ -83,8 +83,9 @@ def solution(x, y):
 
 xarr = [3, 8, 4, 11, 6, 6, 5, 1, 11, 10]
 yarr = [3, 3, 6, 7, 6, 8, 1, 7, 1, 9]
-dist = solution(xarr, yarr)
-print("The shortest distance is", dist)
+dst = solution(xarr, yarr)
+print("The shortest distance is", dst)
+
 
 
 

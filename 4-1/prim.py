@@ -56,4 +56,3 @@ Adj = setAdj(graph)
 print(primMst(graph, Adj))
 
 
-

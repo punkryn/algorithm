@@ -39,5 +39,3 @@ v = selection(a, 0, len(a)-1, 4)
 print(v)
 
 
-
-

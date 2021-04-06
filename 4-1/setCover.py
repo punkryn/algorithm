@@ -20,3 +20,6 @@ subsets = [set([0, 3, 4]),
            ]
 cover = set_cover(universe, subsets)
 print(cover)
+
+
+

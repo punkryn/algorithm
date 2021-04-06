@@ -13,7 +13,7 @@ def dijkstra(g, adj, p):
                 else:
                     d[v] = d[p] + w
                     bound.append(v)
-        print(d)
+        #print(d)
         tmp = int(1e9)
         vmin = ''
         for v in bound:
@@ -55,3 +55,7 @@ graph = {
 }
 Adj = setAdj(graph)
 print(dijkstra(graph, Adj, 'A'))
+
+
+
+

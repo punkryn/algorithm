@@ -29,4 +29,3 @@ v = selection(a, 4)
 print(v)
 
 
-

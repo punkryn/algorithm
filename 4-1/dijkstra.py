@@ -14,12 +14,13 @@ def dijkstra(g, adj, p):
                     d[v] = d[p] + w
                     bound.append(v)
         #print(d)
-        tmp = int(1e9)
-        vmin = ''
-        for v in bound:
-            if d[v] < tmp:
-                tmp = d[v]
-                vmin = v
+        # tmp = int(1e9)
+        # vmin = ''
+        # for v in bound:
+        #     if d[v] < tmp:
+        #         tmp = d[v]
+        #         vmin = v
+        vmin = min(bound, key=lambda x: d[x])
         #vmin = min(bound)
         print("bound: ", bound)
         print("vmin", vmin)
@@ -55,6 +56,7 @@ graph = {
 }
 Adj = setAdj(graph)
 print(dijkstra(graph, Adj, 'A'))
+
 
 
 

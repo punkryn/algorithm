@@ -22,3 +22,8 @@ cover = set_cover(universe, subsets)
 print(cover)
 
 
+
+
+
+
+

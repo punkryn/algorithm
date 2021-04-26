@@ -17,7 +17,7 @@ def primMst(G, Adj):
     while len(T) < len(G['vertices']):
         for e in Adj[p]:
             w, p, u = e
-            if u in T:
+            if u in T.keys():
                 Bound.remove((w, u, p))
             else:
                 Bound.append(e)
@@ -54,3 +54,11 @@ graph = {
 }
 Adj = setAdj(graph)
 print(primMst(graph, Adj))
+
+
+
+
+
+
+
+

@@ -54,7 +54,7 @@ def modinv(a, m):
         return x % m
 
 def elgamal_encryption(e1, e2, p, P):
-    r = 4
+    r = 3
     c1 = (e1 ** r) % p
     c2 = (P * (e2 ** r)) % 11
 
@@ -70,7 +70,7 @@ def elgamal_decryption(d, p, ciphertext):
 Plaintext = 7
 p = 11
 e1 = generator(p)
-d = 3
+d = 5
 e2 = e1 ** d
 
 Ciphertext = elgamal_encryption(e1, e2, p, Plaintext)

@@ -30,9 +30,10 @@ def kruskal(graph):
     minimum_spanning_tree = set()
     edges = list(graph['edges'])
     edges.sort()
-
+    print(edges)
     for edge in edges:
         weight, vertice1, vertice2 = edge
+        #print(find(vertice1), find(vertice2), parent)
         if find(vertice1) != find(vertice2):
             union(vertice1, vertice2)
             minimum_spanning_tree.add(edge)
@@ -66,11 +67,6 @@ graph = {
 }
 
 print(kruskal(graph))
-
-
-
-
-
 
 
 

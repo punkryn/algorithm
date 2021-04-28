@@ -34,8 +34,11 @@ def solution(genres, plays):
 
     for value in (album_value):
         for i, v in enumerate(value):
-            if i == 0 or i > 2:
+            if i == 0:
                 continue
+
+            if i > 2:
+                break
 
             answer.append(v[1])
 

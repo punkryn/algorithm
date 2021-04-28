@@ -8,7 +8,7 @@ def solution(participant, completion):
             players[player] += 1
         else:
             players[player] = 1
-
+    print(players)
     for player in completion:
         if player in players.keys():
             players[player] -= 1

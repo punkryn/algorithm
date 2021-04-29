@@ -56,14 +56,3 @@ graph = {
 }
 Adj = setAdj(graph)
 print(dijkstra(graph, Adj, 'A'))
-
-
-
-
-
-
-
-
-
-
-

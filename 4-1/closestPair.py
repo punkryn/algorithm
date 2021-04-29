@@ -179,8 +179,3 @@ yarr = [3, 3, 6, 7, 6, 8, 1, 7, 1, 9]
 dst = solution(xarr, yarr)
 print("The shortest distance is", dst)
 
-
-
-
-
-

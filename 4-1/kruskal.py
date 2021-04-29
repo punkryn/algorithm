@@ -67,8 +67,3 @@ graph = {
 }
 
 print(kruskal(graph))
-
-
-
-
-

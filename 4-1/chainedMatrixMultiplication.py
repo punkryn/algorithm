@@ -48,3 +48,4 @@ def multiplicationOrder(i, k, j):
 #multiplicationOrder(last_index_i, last_k, last_index_j
 multiplicationOrder(1, 3, 4)
 
+

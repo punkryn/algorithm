@@ -4,15 +4,14 @@ from Crypto.Hash import SHA256
 import pickle
 
 def genCertificate(myPubKey, CAPrivKey):
-    myPubKey = str(myPubKey).encode('utf8')
-    h = SHA256.new(myPubKey)
+    h = SHA256.new(str(myPubKey).encode('utf8'))
     signature = pkcs1_15.new(CAPrivKey).sign(h)
 
     return [myPubKey, signature]
 
 def veriCertificate(aCertificate, CACertificate):
     h = SHA256.new(str(aCertificate[0]).encode('utf8'))
-    print(type(CACertificate[0]), type(aCertificate[1]))
+
     try:
         pkcs1_15.new(CACertificate[0]).verify(h, aCertificate[1])
         return True
@@ -35,7 +34,9 @@ with open('CAPriv.pem', 'r') as cappr:
     CAPrivateKey = RSA.import_key(cappr.read(), passphrase="CA")
 
 with open('CACertCA.plk', 'wb') as cpw:
-    pickle.dump(genCertificate(CAPubkey, CAPrivKey), cpw)
+    root = genCertificate(CAPubkey, CAPrivKey)
+    pub, sig = root
+    pickle.dump([str(pub), sig], cpw)
 
 # d.
 BobPrivKey = RSA.generate(2048)
@@ -51,7 +52,8 @@ with open('BobPub.pem', 'r') as bpupr:
     Bob_pub = RSA.import_key(bpupr.read())
 
 with open('BobCertCA.plk', 'wb') as bccpw:
-    pickle.dump(genCertificate(Bob_pub, CAPrivateKey), bccpw)
+    BobCert = genCertificate(Bob_pub, CAPrivateKey)
+    pickle.dump([str(BobCert[0]), BobCert[1]], bccpw)
 
 # g.
 M = "I bought 100 doge coins."
@@ -72,34 +74,19 @@ with open('CACertCA.plk', 'rb') as cccpr:
     CA_pub, S_CA = rootCert
 
 # j.
-with open('CAPriv.pem', 'r') as cppr:
-    CAPrivateKey = RSA.import_key(cppr.read(), passphrase="CA")
-
-    h = SHA256.new(str(CA_pub).encode('utf8'))
-    sig = pkcs1_15.new(CAPrivateKey).sign(h)
-
-h = SHA256.new(str(CAPubkey).encode('utf8'))
-signature = pkcs1_15.new(CAPrivKey).sign(h)
-
-if veriCertificate([CA_pub, sig], [CAPubkey, signature]):
+if veriCertificate(root, root):
     print("verified")
 else:
     print("fail")
 
 # k.
-with open('CAPriv.pem', 'r') as cppr:
-    CAPrivateKey = RSA.import_key(cppr.read(), passphrase="CA")
-    h = SHA256.new(str(Bob_pub).encode('utf8'))
-    sig = pkcs1_15.new(CAPrivateKey).sign(h)
-
-if veriCertificate([Bob_pub, sig], [CAPubkey, signature]):
+if veriCertificate(BobCert, root):
     print("Bob verified")
 else:
     print("Bob fail")
 
 # i.
-if veriCertificate([M, Bobsignature], [Bob_pub, Bobsignature]):
-
+if veriCertificate([M, Bobsignature], BobCert):
     print("Message verified")
 else:
     print("Message fail")

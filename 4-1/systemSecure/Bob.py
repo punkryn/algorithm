@@ -14,6 +14,7 @@ with open('signature', 'rb') as sr:
 print("Bob received message (", message, signature, ")from Alice")
 h = SHA256.new(message.encode('utf-8'))
 try:
+    print(type(AlicePubKey), type(signature))
     pkcs1_15.new(AlicePubKey).verify(h, signature)
     print("The signature is valid")
 except(ValueError, TypeError):

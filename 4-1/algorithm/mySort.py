@@ -170,4 +170,3 @@ if check(rList, n):
     print("Sorted")
 else:
     print("not Sorted")
-

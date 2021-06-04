@@ -30,4 +30,3 @@ print(mValue)
 print(mci)
 print(mcj)
 print(mck)
-

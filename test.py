@@ -9,4 +9,3 @@ def q(B):
     print(B)
 
 q(a[i])
-

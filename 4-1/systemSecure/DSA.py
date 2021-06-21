@@ -15,6 +15,9 @@ def modinv(a, m):
     else:
         return x % m
 
+print(modinv(61, 101))
+print((2**320)%3119)
+
 p = 8081
 q = 101
 e0 = 3

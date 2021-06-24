@@ -15,7 +15,7 @@ def modinv(a, m):
     else:
         return x % m
 
-print(modinv(61, 101))
+print(modinv(15, 442))
 print((2**320)%3119)
 
 p = 8081

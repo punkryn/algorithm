@@ -1,11 +1,14 @@
+import heapq
 def heapSort(arr, n):
     heapq._heapify_max(arr)
     arr.insert(0, -1)
     heapSize = n
     for i in range(n):
+        print(arr)
         arr[1], arr[heapSize] = arr[heapSize], arr[1]
         heapSize -= 1
         downHeap(arr, heapSize)
+
 
     arr.pop(0)
     return arr
@@ -32,3 +35,7 @@ def downHeap(arr, heapSize):
         elif lflag:
             arr[i], arr[i * 2] = arr[i * 2], arr[i]
             i = i * 2
+
+arr = [90, 60, 80, 50, 30, 70, 10, 20, 40]
+heapSort(arr, 9)
+print(arr)
